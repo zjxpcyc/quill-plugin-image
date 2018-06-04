@@ -1,0 +1,21 @@
+{
+  "name": "quill-plugin-image",
+  "version": "0.0.1",
+  "description": "Change quill default actions when insert images.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --presets stage-2"
+  },
+  "keywords": [
+    "quill",
+    "image"
+  ],
+  "author": "Yansen <418580217@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "quill": "^1.3.6"
+  },
+  "devDependencies": {
+    "babel-preset-stage-2": "^6.24.1"
+  }
+}
