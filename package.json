@@ -11,6 +11,10 @@
     "image"
   ],
   "author": "Yansen <418580217@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zjxpcyc/quill-plugin-image"
+  },
   "license": "MIT",
   "dependencies": {
     "quill": "^1.3.6"
