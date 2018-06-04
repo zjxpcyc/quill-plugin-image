@@ -21,11 +21,8 @@ import uploadImage from 'quill-plugin-image';
 
 // var quill = new Quill();
 
-/**
- * uploadImage
- * param: quill - the quill instance
- * param: function -  file => Promise
- * /
+// param: quill - the quill instance
+// param: function -  file => Promise
 uploadImage(quill, ((file) => {
   // 1. 直接转 base64
   const reader = new FileReader();
