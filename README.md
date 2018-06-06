@@ -24,10 +24,16 @@ import uploadImage from 'quill-plugin-image';
 // param: quill - the quill instance
 // param: function -  file => Promise
 uploadImage(quill, ((file) => {
+  // 菊花转
+  // loadding.start();
+
   // 1. 直接转 base64
   const reader = new FileReader();
   reader.onload = (e) => {
       base64String = e.target.result;
+
+      
+      // loadding.stop();
 
       // or return Promise.resolve({ src: base64String, alt: file.name });
       return Promise.resolve(base64String);
@@ -46,8 +52,12 @@ uploadImage(quill, ((file) => {
         method: 'POST',
       }
     ).then(data => {
+      // loadding.stop();
+
       // 得到远程结果 data
-      resolve(data);
+      // data 可以是 string 图片地址
+      // 也可以是对象, 属性值是同 html img 元素一致
+      resolve({ src: data.url, alt: data.alt || file.name });
     });
   });
 
