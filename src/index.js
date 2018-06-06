@@ -17,11 +17,15 @@ export default function uploadImage(quill, upload) {
       if (input.files != null && input.files[0] != null) {
         let range = quill.getSelection(true);
 
-        upload(input.files[0]).then((image) => {
-          quill.updateContents(new Delta()
-            .retain(range.index)
-            .delete(range.length)
-            .insert({ image })
+        upload(input.files[0]).then((data) => {
+          const { src: image, ...attributes } = typeof data === 'string' ? { src: data } : data;
+
+          quill.updateContents(
+            new Delta()
+              .retain(range.index)
+              .delete(range.length)
+              .insert({ image }, attributes),
+            'user',
           );
 
           // APIs causing text to change may also be called with a "silent" source,
