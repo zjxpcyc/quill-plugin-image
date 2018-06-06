@@ -1,6 +1,6 @@
 {
   "name": "quill-plugin-image",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Change quill default actions when insert images.",
   "main": "lib/index.js",
   "scripts": {
