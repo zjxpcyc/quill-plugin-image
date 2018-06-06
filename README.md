@@ -54,8 +54,7 @@ uploadImage(quill, ((file) => {
     ).then(data => {
       // loadding.stop();
 
-      // 得到远程结果 data
-      // data 可以是 string 图片地址
+      // resolve 可以是 string 图片地址
       // 也可以是对象, 属性值是同 html img 元素一致
       resolve({ src: data.url, alt: data.alt || file.name });
     });
