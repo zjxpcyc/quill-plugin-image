@@ -28,17 +28,19 @@ uploadImage(quill, ((file) => {
   // loadding.start();
 
   // 1. 直接转 base64
-  const reader = new FileReader();
-  reader.onload = (e) => {
-      base64String = e.target.result;
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        base64String = e.target.result;
 
-      
-      // loadding.stop();
+        
+        // loadding.stop();
 
-      // or return Promise.resolve({ src: base64String, alt: file.name });
-      return Promise.resolve(base64String);
-  };
-  reader.readAsDataURL(file);
+        // or resolve({ src: base64String, alt: file.name });
+        resolve(base64String);
+    };
+    reader.readAsDataURL(file);
+  });
 
   // 2. ajax 或者 fetch 远程上传
   return new Promise((resolve, reject) => {
