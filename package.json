@@ -4,7 +4,7 @@
   "description": "Change quill default actions when insert images.",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib --presets stage-2",
+    "build": "babel src --out-dir lib",
     "pub": "npm publish --registry=https://registry.npmjs.org"
   },
   "keywords": [
@@ -21,6 +21,7 @@
     "invariant": "^2.2.4"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
     "quill": "^1.3.6"
   }
